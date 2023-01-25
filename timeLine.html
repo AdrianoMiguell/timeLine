@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="StyleTimeLine.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="timeLine">
+        <h1 class="title">Timeline</h1>
+
+        <div class="frameContainer">
+            <div class="framer">
+                <div class="frameChildren">
+                    <div class="frameText" style="--y: 1.25rem;">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur!</p>
+                    </div>
+                    <div class="frameImage" style="--y: -2.5rem;">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur!</p>
+                    </div>
+                </div>
+
+                <div class="frameChildren">
+                    <div class="frameText" style="--y: 1.25rem;">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur! Lorem ipsum dolor sit amet consectetur, adipisicing elit. A illum ipsam voluptatibus soluta ab facilis tempore laborum deserunt nesciunt, ipsa officia voluptatem sed nam quidem, quo quos nobis eveniet incidunt!</p>
+                    </div>
+                    <div class="frameImage" style="--y: -2.5rem;">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur!</p>
+                    </div>
+                </div>
+                
+                <div class="frameChildren">
+                    <div class="frameText" style="--y: 1.25rem;">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur!</p>
+                    </div>
+                    <div class="frameImage" style="--y: -2.5rem;">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur!</p>
+                    </div>
+                </div>
+
+                <div class="frameChildren">
+                    <div class="frameText onlyText" style="--y: 1.25rem; --h: -7.4rem;">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur!</p>
+                    </div>
+                </div>
+
+                <div class="frameChildren">
+                    <div class="frameText" style="--y: 1.25rem;">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur!</p>
+                    </div>
+                    <div class="frameImage" style="--y: -2.5rem;">
+                        <h2>lorem</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur!</p>
+                    </div>
+                </div>
+
+
+                <!-- <div class="frameChildren">
+                    <h2>lorem</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates molestias perferendis
+                        tempore tenetur in. Dignissimos tempora, debitis quae iste incidunt quo eos eveniet,
+                        perspiciatis nisi repellat quaerat praesentium voluptatem cumque..</p>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const frame = document.querySelector(".frame");
+
+        frame.animate([
+            { opacity: '0' },
+            { opacity: '1' }
+        ], {
+            duration: 500
+        });
+    </script>
+</body>
+
+</html>

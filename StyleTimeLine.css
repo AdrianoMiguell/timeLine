@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.title{
+    color: white;
+    text-align: center;
+}
+.timeLine {
+    position: fixed;
+    height: 100vh;
+    background: #001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.frameContainer {
+    width: 100vw;
+    overflow-x: scroll;
+    padding: 2rem 0;
+}
+
+.framer {
+    margin: 2rem -1rem;
+    padding: 2rem 1rem;
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-items: flex-end;
+
+}
+
+.onlyText{
+    transform: translateY(var(--h));
+}
+
+.frameChildren{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: max-content;
+}
+
+.frameText, .frameImage {
+    background: #003;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.frameText, .frameImage {
+    position: relative;
+    padding: 0.5rem;
+    margin: auto 1rem;
+    min-width: 25rem;
+    max-width: 50rem;
+    min-height: 5rem;
+    max-height: 100%;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.frameImage{
+    transform: translateY(5rem);
+}
+
+.frameText::after, .frameImage::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    transform: translateX(-0.5rem);
+    transform: translateY(var(--y));
+    background-color: #003;
+    border: 2.5px solid #fff;
+    perspective: 1000px;
+    animation: appearCircle 2.5s ease-in-out;
+    z-index: 1;
+}
+
+.frameImage:hover, .frameText:hover {
+    transition-duration: 0.75s;
+    translate: 0rem -1.5rem;
+    box-shadow: 7.5px 7.5px 1px rgba(255, 255, 255, 0.5);
+}
+
+.frameImage:not(hover), .frameText:not(hover) {
+    transition-duration: 0.75s;
+}
+
+.Line {
+    height: 5px;
+    background-color: #fff;
+}
+
+@keyframes appearCircle {
+    0% {
+        opacity: 0;
+    }
+
+    55% {
+        box-shadow: 0 0 1px #fff;
+    }
+
+    75% {
+        box-shadow: 0 0 5px #fff;
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+
+    55% {
+        box-shadow: 0 0 1px #fff;
+    }
+
+    75% {
+        box-shadow: 0 0 5px #fff;
+    }
+
+    100% {
+        opacity: 1;
+        width: 110%;
+    }
+}
+
+p {
+    word-wrap: break-word;
+}
+
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-container:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flip-container {
+    width: 300px;
+    height: 200px;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
